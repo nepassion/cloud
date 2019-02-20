@@ -1,0 +1,16 @@
+server:
+  port: 8761
+spring:
+  application: 
+    name: cloud-server
+eureka:
+  instance:
+    appname: ${spring.application.name}
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    #registry-fetch-interval-seconds: 10 eureka client多久去服务器获取服务注册信息
+  server:
+    eviction-interval-timer-in-ms: 30000 #默认60*1000毫秒 超时剔除服务
+    enable-self-preservation: false #关闭自我保护机制
+        
